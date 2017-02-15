@@ -32,3 +32,11 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+collections:
+  speakers:
+    output: true
+    happy: yes
+  events:
+    output: true
+    happy: no

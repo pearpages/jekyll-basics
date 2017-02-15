@@ -1,4 +1,4 @@
- # Collections
+# Collections
 
  Collections allow you to define a new type of document that behave like Pages or Posts do normally, but also have their own unique properties and namespace.
 
@@ -12,7 +12,15 @@
 
 ```yaml
 collections:
-- my_collection
+  my_collection
+```
+
+```yaml
+collections:
+  speakers:
+    output: true
+  events:
+    output: true
 ```
 
 You can optionally specify metadata for your collection in the configuration:
@@ -155,3 +163,65 @@ Output:
 
 ## Liquid attributes
 
+### Accessing a Collection
+
+Each collection is accessible as a field on the site variable. For example, if you want to access the albums collection found in **_albums**, you’d use **site.albums**.
+
+Each collection is itself an array of documents (e.g., site.albums is an array of documents, much like site.pages and site.posts).
+
+### Accessing All Collections
+
+The collections are also available under ```site.collections```, with the metadata you specified in your **_config.yml**.
+
++ label *The name of your collection, e.g. my_collection.*
++ docs *An array of documents.*
++ files *An array of static files in the collection.*
++ relative_directory *The path to the collection's source directory, relative to the site source.*
++ directory *The full path to the collections's source directory.*
++ output *Whether the collection's documents will be output as individual files. *
+
+Example in template
+
+```html
+{% for c in site.collections %}
+    {{c.label}} {{c.relative_directory}} {{c.directory}} {{c.output}} {{c.meta_var}}
+{% endfor %}
+```
+
+### Accessing a Collection (Documents)
+
+In addition to any YAML *Front Matter* provided in the document’s corresponding file, each document has the following attributes:
+
++ content *The (unrendered) content of the document. If no YAML Front Matter is provided, Jekyll will not generate the file in your collection. If YAML Front Matter is used, then this is all the contents of the file after the terminating `---` of the front matter.*
++ output *The rendered output of the document, based on the  content.*
++ path *The full path to the document's source file.*
++ relative_path *The path to the document's source file relative to the site source.*
++ url *The URL of the rendered collection. The file is only written to the destination when the collection to which it belongs has output: true in the site's configuration.*
++ collection *The name of the document's collection.*
++ date *The date of the document's collection.*
+
+### Accessing Collection attributes
+
+Attributes from the YAML front matter can be accessed as data anywhere in the site. 
+
+You might have front matter in an individual file structured as follows (which must use a supported markup format, and cannot be saved with a .yaml extension):
+
+```yaml
+title: "Josquin: Missa De beata virgine and Missa Ave maris stella"
+artist: "The Tallis Scholars"
+director: "Peter Phillips"
+works:
+  - title: "Missa De beata virgine"
+    composer: "Josquin des Prez"
+    tracks:
+      - title: "Kyrie"
+        duration: "4:25"
+      - title: "Gloria"
+        duration: "9:53"
+      - title: "Credo"
+        duration: "9:09"
+      - title: "Sanctus & Benedictus"
+        duration: "7:47"
+      - title: "Agnus Dei I, II & III"
+        duration: "6:49"
+```
