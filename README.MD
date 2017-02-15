@@ -1,6 +1,36 @@
 # Jekyll Tips
 
+## Pending Topics
+
 + Liquid template system
+
+---
+
+## Basic Usage
+
+> Changes to _config.yml are not included during automatic regeneration.
+
+### Defining Source and Destination Folders in Config File
+
+```yaml
+source:      _source
+destination: _deploy
+```
+
+Then the following two commands will be equivalent:
+
+```
+$ jekyll build
+$ jekyll build --source _source --destination _deploy
+```
+
+---
+
+## Blog Migrations
+
+[Jekyll Import Docs Site](https://import.jekyllrb.com/docs/home/)
+
+---
 
 ## Sass
 
@@ -38,3 +68,5 @@ Partials must go in the default ```_sass``` folder.
     sass_dir: _sass #partials, folder by default, not need to write it
     style: compressed
  ```
+
+ ---
