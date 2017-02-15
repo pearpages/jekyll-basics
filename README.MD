@@ -5,6 +5,10 @@
 + Liquid template system
 + CircleCI
 
+Liquid is an open-source template language created by Shopify and written in Ruby. It is the backbone of Shopify themes and is used to load dynamic content on storefronts.
+
+[Liquid](https://help.shopify.com/themes/liquid)
+
 ---
 
 * [Basic Usage](_docs/basic-usage.md)
