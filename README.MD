@@ -15,5 +15,6 @@ Liquid is an open-source template language created by Shopify and written in Rub
 * [Blog Migrations](_docs/blog-migrations.md)
 * [Sass](_docs/sass.md)
 * [Collections](_docs/collections.md)
+* [Configuration](_docs/configuration.md)
 
 ---
