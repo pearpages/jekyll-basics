@@ -3,7 +3,9 @@
 ## Pending Topics
 
 + Liquid template system
-+ CircleCI
++ Continuous Integration
+  + CircleCI
+  + Travis CI
 
 Liquid is an open-source template language created by Shopify and written in Ruby. It is the backbone of Shopify themes and is used to load dynamic content on storefronts.
 
@@ -16,5 +18,6 @@ Liquid is an open-source template language created by Shopify and written in Rub
 * [Sass](_docs/sass.md)
 * [Collections](_docs/collections.md)
 * [Configuration](_docs/configuration.md)
+* [Data Files](_docs/data-files.md)
 
 ---
