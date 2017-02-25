@@ -21,14 +21,12 @@ Liquid is an open-source template language created by Shopify and written in Rub
 * [Data Files](_docs/data-files.md)
 * [Deployment Methods](_docs/deployment-methods.md)
 * [Front Matter](_docs/front-matter.md)
+* [Includes](_docs/includes.md)
 
 ---
 
 ## Pending
 
-+ GitHub Pages
-+ History
-+ Includes
 + Installation
 + Jekyll On windows ?
 + Maintaining Jekyll
